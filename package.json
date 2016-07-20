@@ -1,0 +1,21 @@
+{
+  "name": "bowling-kata",
+  "version": "1.0.0",
+  "description": "TDD version of bowling kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape 'tests/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bowling-kata"
+  },
+  "keywords": [
+    "bowling"
+  ],
+  "author": "martinandmadeleine",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
