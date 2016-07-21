@@ -46,3 +46,10 @@ test('scores a game', function(t){
   t.equals(totalScore, 119)
   t.end()
 })
+
+test('scores a spare in the 10th frame', function(t) {
+  var allFrames = [ [1, 2], [6, 4], [5, 4], [10, 0], [7, 2], [10, 0], [10, 0], [5, 2], [7, 0], [10, 10, 10] ]
+  var totalScore = game.scoreGame(allFrames)
+  t.equals(totalScore, 141)
+  t.end()
+})

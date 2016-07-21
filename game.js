@@ -3,11 +3,13 @@ module.exports = {
   scoreFrame: scoreFrame
   }
 
-function scoreGame(game){
+function scoreGame(frames){
   var gameScore = 0
-  for (var i=0; i<game.length; i++){
-    gameScore += scoreFrame(game[i], game[i+1], game[i+2])
+  for (var i=0; i<frames.length - 1; i++){
+    gameScore += scoreFrame(frames[i], frames[i+1], frames[i+2])
   }
+  var tenthFrame = frames[9]
+  gameScore += scoreTenth(tenthFrame)
   return gameScore
 }
 
@@ -21,8 +23,16 @@ function scoreFrame (frame, nextFrame, nextNextFrame) {
   return frame[0] + frame[1]
 }
 
+function scoreTenth (frame) {
+  var sum = 0
+  for (var i=0; i<frame.length; i++) {
+  sum += frame[i]
+  } 
+  return sum
+}
+
 function scoreStrike(frame, nextFrame, nextNextFrame){
-  var score = frame[0] + frame[1] + nextFrame[0] + nextFrame[1]
+  var score = frame[0] + nextFrame[0] + nextFrame[1]
   if (nextFrame[0] === 10) {
     score += nextNextFrame[0]
   }
