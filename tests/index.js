@@ -39,3 +39,10 @@ test('scores a double strike frame', function(t) {
   t.equals(score, 25)
   t.end()
 })
+
+test('scores a game', function(t){
+  var allFrames = [ [1, 2], [6, 4], [5, 4], [10, 0], [7, 2], [10, 0], [10, 0], [5, 2], [7, 0], [4, 4] ]
+  var totalScore = game.scoreGame(allFrames)
+  t.equals(totalScore, 119)
+  t.end()
+})

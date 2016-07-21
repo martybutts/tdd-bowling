@@ -1,5 +1,14 @@
 module.exports = {
+  scoreGame: scoreGame,
   scoreFrame: scoreFrame
+  }
+
+function scoreGame(game){
+  var gameScore = 0
+  for (var i=0; i<game.length; i++){
+    gameScore += scoreFrame(game[i], game[i+1], game[i+2])
+  }
+  return gameScore
 }
 
 function scoreFrame (frame, nextFrame, nextNextFrame) {
